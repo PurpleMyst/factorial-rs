@@ -2,7 +2,8 @@
 
 use cpython::{PyResult, Python};
 
-py_module_initializer!(libfactorial_rs, initlibfactorial_rs, PyInit_libfactorial_rs, |py, module| {
+// TODO: Fix this to use `concat_idents!` once it comes stable.
+py_module_initializer!(factorial, initfactorial, PyInit_factorial, |py, module| {
     module.add(py, "__doc__", "Tail-recursive factorial written in Rust.")?;
     module.add(py, "factorial", py_fn!(py, factorial_py(n: u64)))?;
     Ok(())
