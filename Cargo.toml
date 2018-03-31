@@ -8,5 +8,10 @@ name = "factorial_rs"
 crate-type = ["cdylib"]
 
 [dependencies.cpython]
-version = "0.1"
+version = "*"
 features = ["extension-module"]
+
+# XXX: This library probably isn't very efficient. If we care about speed any,
+# it might be interesting to use GMP instead.
+[dependencies.num-bigint]
+version = "*"
