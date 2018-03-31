@@ -3,4 +3,10 @@ name = "factorial-rs"
 version = "0.1.0"
 authors = ["Purple Myst <PurpleMyst@users.noreply.github.com>"]
 
-[dependencies]
+[lib]
+name = "factorial_rs"
+crate-type = ["cdylib"]
+
+[dependencies.cpython]
+version = "0.1"
+features = ["extension-module"]
